@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import  "./button.css"
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
 import PersonIcon from '@mui/icons-material/Person';
 import InputAdornment from '@mui/material/InputAdornment';
 import Card from '@mui/material/Card';
@@ -46,8 +48,14 @@ const MyForm: React.FC = () => {
 
   return (
     <div id='container'>
+      
       <Card id='card'>
-      <form id='form' onSubmit={handleSubmit}>
+        <CardContent>
+        <Typography id='heading' >
+        Fill The Form Given Below
+      </Typography>
+        </CardContent>
+        <form id='form' onSubmit={handleSubmit}>
       <TextField
       id='username'
         label="Name"
@@ -102,6 +110,7 @@ const MyForm: React.FC = () => {
         Submit
       </Button>
     </form>
+     
         </Card>
        
     </div>

@@ -7,7 +7,9 @@ import {
   ListItemIcon,
   ListItemText,
 } from '@mui/material';
+import "./button.css"
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import Card from '@mui/material/Card';
 
 interface Department {
   department: string;
@@ -92,7 +94,8 @@ const DepartmentList: React.FC = () => {
     const isOpen = department.sub_departments.length > 0;
 
     return (
-      <React.Fragment key={department.department}>
+      <Card id='card2'>
+ <React.Fragment key={department.department}>
         <ListItem  onClick={() => handleToggleDepartment(index)}>
           <ListItemIcon>
             <Checkbox
@@ -127,6 +130,8 @@ const DepartmentList: React.FC = () => {
           </List>
         </Collapse>
       </React.Fragment>
+      </Card>
+     
     );
   };
 
