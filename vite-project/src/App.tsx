@@ -8,7 +8,7 @@ const App=()=> {
   return (
    <ReactRoutes>
 
-          <Route path='login' element={<MyForm />} />
+          <Route index  element={<MyForm />} />
           <Route path='table' element={<MyTable></MyTable>}/>
 
    </ReactRoutes>
