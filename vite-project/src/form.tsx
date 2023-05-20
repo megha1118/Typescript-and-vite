@@ -115,5 +115,5 @@ const MyForm: React.FC = () => {
   );
 };
 
-export {MyForm};
+export  default MyForm;
 

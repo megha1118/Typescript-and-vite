@@ -1,18 +1,25 @@
+import  { lazy, Suspense } from "react"
 import './App.css'
-import {MyForm} from "./form"
+// import MyForm from "./form"
 import { Routes as ReactRoutes, Route } from "react-router-dom";
-import { MyTable } from './table';
+// import  MyTable  from './table';
 
-const App=()=> {
+const MyForm = lazy(() => import("./form"))
+const MyTable = lazy(() => import('./table'))
+const App = () => {
 
-  return (
-   <ReactRoutes>
+       return (
+              <Suspense fallback={<h1>loading...</h1>}>
 
-          <Route index  element={<MyForm />} />
-          <Route path='table' element={<MyTable></MyTable>}/>
+              <ReactRoutes>
+                            <Route index element={<MyForm />} />
+                            <Route path='table' element={<MyTable></MyTable>} />
 
-   </ReactRoutes>
-    )
+
+              </ReactRoutes>
+              </Suspense>
+
+       )
 }
 
-export {App} 
+export { App } 

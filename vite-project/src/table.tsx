@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 // import { DepartmentTable } from './table2';
-import {DepartmentList} from './table2'
+import DepartmentList from './table2'
 
 interface Post {
   id: number;
@@ -58,4 +58,4 @@ const MyTable: React.FC = () => {
   );
 };
 
-export {MyTable};
+export default MyTable;

@@ -137,6 +137,6 @@ const DepartmentList: React.FC = () => {
   );
 };
 
-export {DepartmentList};
+export  default DepartmentList;
 
 
