@@ -1,9 +1,13 @@
-
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import  "./button.css"
+import PersonIcon from '@mui/icons-material/Person';
+import InputAdornment from '@mui/material/InputAdornment';
+import Card from '@mui/material/Card';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import EmailIcon from '@mui/icons-material/Email';
 
 interface FormData {
   name: string;
@@ -41,38 +45,67 @@ const MyForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div id='container'>
+      <Card id='card'>
+      <form id='form' onSubmit={handleSubmit}>
       <TextField
+      id='username'
         label="Name"
         name="name"
         value={formData.name}
         onChange={handleInputChange}
         required
-        fullWidth
+        color="success" focused
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+<PersonIcon/>
+            </InputAdornment>
+          ),
+        }}
       />
 
       <TextField
+      id='usernumber'
         label="Phone Number"
         name="phoneNumber"
+        color="success" focused
         value={formData.phoneNumber}
         onChange={handleInputChange}
         required
-        fullWidth
-      />
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+<LocalPhoneIcon/>
+            </InputAdornment>
+          ),
+        }}
+              />
 
       <TextField
+      id='useremail'
         label="Email"
         name="email"
+        color="success" focused
         value={formData.email}
         onChange={handleInputChange}
         required
-        fullWidth
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+<EmailIcon/>            </InputAdornment>
+          ),
+        }}
       />
 
-      <Button type="submit" variant="contained" color="primary">
+      <Button id='btn' type="submit" variant="contained" color="primary">
         Submit
       </Button>
     </form>
+        </Card>
+       
+    </div>
+   
   );
 };
 
